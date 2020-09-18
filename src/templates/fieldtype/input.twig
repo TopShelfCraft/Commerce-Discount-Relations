@@ -1,0 +1,14 @@
+{% import "_includes/forms" as forms %}
+
+{%- set class = [
+	'nicetext',
+]|filter %}
+
+{% set config = {
+	id: name,
+	name: name,
+	value: value,
+	class: class,
+} %}
+
+{{ forms.text(config) }}

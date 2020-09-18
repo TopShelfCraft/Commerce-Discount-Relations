@@ -1,0 +1,38 @@
+{
+	"name": "steadfast/discount-relations",
+	"description": "A fieldtype for creating element relations to Discounts in Craft Commerce",
+	"type": "craft-plugin",
+	"version": "0.0.1",
+	"license": "proprietary",
+	"support": {
+		"issues": "https://github.com/topshelfcraft/discount-relations/issues",
+		"source": "https://github.com/topshelfcraft/discount-relations"
+	},
+	"authors": [
+		{
+			"name": "Michael Rog",
+			"homepage": "https://topshelfcraft.com"
+		},
+		{
+			"name": "Steadfast Design",
+			"homepage": "https://steadfast.design"
+		}
+	],
+	"require": {
+		"craftcms/commerce": "^3.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"TopShelfCraft\\DiscountRelations\\": "src/"
+		}
+	},
+	"extra": {
+		"name": "Discount Relations",
+		"handle": "discount-relations",
+		"developer": "Steadfast Design",
+		"developerUrl": "https://steadfast.design",
+		"developerEmail": "support@steadfast.design",
+		"documentationUrl": "https://steadfast.design",
+		"class": "TopShelfCraft\\DiscountRelations\\DiscountRelations"
+	}
+}
