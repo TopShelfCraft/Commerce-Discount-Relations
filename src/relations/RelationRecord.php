@@ -15,7 +15,7 @@ use TopShelfCraft\DiscountRelations\base\BaseRecord;
 class RelationRecord extends BaseRecord
 {
 
-	const TableName = 'discountrelations_relation';
+	const TableName = 'discountrelations_relations';
 
 	/**
 	 * @var array

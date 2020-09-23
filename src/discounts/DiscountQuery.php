@@ -29,14 +29,6 @@ class DiscountQuery extends ActiveQuery
 	public function codes()
 	{
 		return $this->select('code')->column();
-		// TODO: Only query code column; no need to query all and instantiate.
-		return array_map(
-			function(Discount $discount)
-			{
-				return $discount->code;
-			},
-			$this->all()
-		);
 	}
 
 }
