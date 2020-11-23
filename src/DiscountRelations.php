@@ -67,7 +67,7 @@ class DiscountRelations extends Plugin
 	public function init()
 	{
 
-		Craft::setAlias('@discount-relations', __DIR__);
+		Craft::setAlias('@topshelfcraft/discount-relations', __DIR__);
 		parent::init();
 
 		$this->_registerEventHandlers();
