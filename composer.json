@@ -2,7 +2,7 @@
 	"name": "steadfast/discount-relations",
 	"description": "A fieldtype for creating element relations to Discounts in Craft Commerce",
 	"type": "craft-plugin",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"license": "proprietary",
 	"support": {
 		"issues": "https://github.com/topshelfcraft/discount-relations/issues",
