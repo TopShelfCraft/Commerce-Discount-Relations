@@ -1,5 +1,5 @@
 <?php
-namespace TopShelfCraft\DiscountRelations\config;
+namespace BeSteadfast\DiscountRelations\config;
 
 use craft\base\Model;
 

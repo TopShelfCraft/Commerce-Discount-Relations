@@ -1,5 +1,5 @@
 <?php
-namespace TopShelfCraft\DiscountRelations\controllers\console;
+namespace BeSteadfast\DiscountRelations\controllers\console;
 
 use Craft;
 use craft\helpers\Console;

@@ -1,12 +1,12 @@
 <?php
-namespace TopShelfCraft\DiscountRelations\relations;
+namespace BeSteadfast\DiscountRelations\relations;
 
 use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\commerce\models\Discount;
-use topshelfcraft\discountrelations\DiscountRelations;
-use TopShelfCraft\DiscountRelations\discounts\DiscountQuery;
+use BeSteadfast\DiscountRelations\DiscountRelations;
+use BeSteadfast\DiscountRelations\discounts\DiscountQuery;
 
 class RelationsField extends Field
 {
@@ -156,16 +156,11 @@ class RelationsField extends Field
 			->andWhere(['elementId' => $element->id])
 			->andWhere(['fieldId' => $this->id]);
 
-//		Craft::dd($relations->all());
-//		Craft::dd($relations->discountIds());
-
 		$discountQuery->andWhere([
 			'in',
 			'id',
 			$relations->discountIds()
 		]);
-
-//		Craft::dd($discountQuery);
 
 		return $discountQuery;
 

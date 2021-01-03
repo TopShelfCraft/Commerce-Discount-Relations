@@ -1,16 +1,13 @@
 <?php
-namespace TopShelfCraft\DiscountRelations\relations;
+namespace BeSteadfast\DiscountRelations\relations;
 
 use Craft;
 use craft\base\Component;
 use craft\base\ElementInterface;
 use craft\commerce\records\Discount;
-use craft\db\Command;
-use craft\db\Query;
-use craft\db\Table;
 use craft\fields\BaseRelationField;
 use craft\helpers\Db;
-use TopShelfCraft\DiscountRelations\discounts\DiscountQuery;
+use BeSteadfast\DiscountRelations\discounts\DiscountQuery;
 
 class Relations extends Component
 {

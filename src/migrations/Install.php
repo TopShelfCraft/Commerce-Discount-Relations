@@ -1,11 +1,11 @@
 <?php
-namespace TopShelfCraft\DiscountRelations\migrations;
+namespace BeSteadfast\DiscountRelations\migrations;
 
 use craft\commerce\records\Discount;
 use craft\db\Migration;
 use craft\records\Element;
 use craft\records\Field;
-use TopShelfCraft\DiscountRelations\relations\RelationRecord;
+use BeSteadfast\DiscountRelations\relations\RelationRecord;
 
 class Install extends Migration
 {

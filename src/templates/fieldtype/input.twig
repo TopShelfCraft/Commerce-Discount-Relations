@@ -1,7 +1,10 @@
+{% do view.registerAssetBundle('BeSteadfast\\DiscountRelations\\web\\assets\\DiscountsField') -%}
+
 {% import "_includes/forms" as forms %}
 
 {%- set class = [
 	'nicetext',
+	'DiscountsField'
 ]|filter %}
 
 {% set config = {

@@ -1,5 +1,5 @@
 <?php
-namespace topshelfcraft\discountrelations;
+namespace BeSteadfast\DiscountRelations;
 
 use Craft;
 use craft\base\Plugin;
@@ -9,9 +9,9 @@ use craft\helpers\FileHelper;
 use craft\services\Fields;
 use craft\web\Application as WebApplication;
 use craft\web\twig\variables\CraftVariable;
-use TopShelfCraft\DiscountRelations\relations\Relations;
-use TopShelfCraft\DiscountRelations\config\Settings;
-use TopShelfCraft\DiscountRelations\relations\RelationsField;
+use BeSteadfast\DiscountRelations\relations\Relations;
+use BeSteadfast\DiscountRelations\config\Settings;
+use BeSteadfast\DiscountRelations\relations\RelationsField;
 use yii\base\Event;
 
 /**
@@ -67,7 +67,7 @@ class DiscountRelations extends Plugin
 	public function init()
 	{
 
-		Craft::setAlias('@topshelfcraft/discountrelations', __DIR__);
+		Craft::setAlias('@BeSteadfast/DiscountRelations', __DIR__);
 		parent::init();
 
 		$this->_registerEventHandlers();
@@ -77,42 +77,13 @@ class DiscountRelations extends Plugin
 
 		if (Craft::$app instanceof ConsoleApplication)
 		{
-			$this->controllerNamespace = 'topshelfcraft\\discountrelations\\controllers\\console';
+			$this->controllerNamespace = 'BeSteadfast\\DiscountRelations\\controllers\\console';
 		}
 		if (Craft::$app instanceof WebApplication)
 		{
-			$this->controllerNamespace = 'topshelfcraft\\discountrelations\\controllers\\web';
+			$this->controllerNamespace = 'BeSteadfast\\DiscountRelations\\controllers\\web';
 		}
 
-	}
-
-	/**
-	 * @param $msg
-	 * @param string $level
-	 * @param string $file
-	 */
-	public static function log($msg, $level = 'notice', $file = 'DiscountRelations')
-	{
-		try
-		{
-			$file = Craft::getAlias('@storage/logs/' . $file . '.log');
-			$log = "\n" . date('Y-m-d H:i:s') . " [{$level}]" . "\n" . print_r($msg, true);
-			FileHelper::writeToFile($file, $log, ['append' => true]);
-		}
-		catch(\Exception $e)
-		{
-			Craft::error($e->getMessage());
-		}
-	}
-
-	/**
-	 * @param $msg
-	 * @param string $level
-	 * @param string $file
-	 */
-	public static function error($msg, $level = 'error', $file = 'DiscountRelations')
-	{
-		static::log($msg, $level, $file);
 	}
 
 	/**

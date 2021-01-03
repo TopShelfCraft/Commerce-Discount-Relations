@@ -1,8 +1,8 @@
 <?php
-namespace TopShelfCraft\DiscountRelations\relations;
+namespace BeSteadfast\DiscountRelations\relations;
 
 use Craft;
-use TopShelfCraft\DiscountRelations\base\BaseRecord;
+use BeSteadfast\DiscountRelations\base\BaseRecord;
 
 /**
  * A record of the relationship between an Element and a Discount, via a Field

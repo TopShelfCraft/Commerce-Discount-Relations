@@ -1,5 +1,5 @@
 <?php
-namespace TopShelfCraft\DiscountRelations\discounts;
+namespace BeSteadfast\DiscountRelations\discounts;
 
 use craft\commerce\records\Discount;
 use yii\db\ActiveQuery;
