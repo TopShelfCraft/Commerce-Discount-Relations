@@ -1,0 +1,64 @@
+.DiscountsField * {
+    color: #3f4d5a !important;
+}
+
+.DiscountsField .selectize-input {
+    background-color: #fbfcfe;
+    border-color: rgba(96, 125, 159, 0.25);
+    box-shadow: inset 0 1px 4px -1px rgba(96, 125, 159, 0.25);
+}
+
+.DiscountsField .selectize-input:focus-within {
+    border-color: rgba(96, 125, 159, 0.8);
+}
+
+.DiscountsField .selectize-input > .item,
+.DiscountsField .selectize-dropdown-content > .item {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background-color: #e4edf6 !important;
+    border: 1px solid #e4edf6 !important;
+    margin: 3px 0 !important;
+    padding: 8px !important;
+    border-radius: 3px;
+    white-space: normal;
+}
+
+.DiscountsField .selectize-dropdown-content > .item .highlight {
+    color: currentColor !important;
+    background-color: rgba(96, 125, 159, 0.25);
+    padding: 1px;
+    text-decoration: underline;
+}
+
+.DiscountsField .selectize-input > .item.active,
+.DiscountsField .selectize-dropdown-content > .item:hover {
+    background-color: #dee7f0 !important;
+    border-color: rgba(96, 125, 159, 0.8) !important;
+}
+
+.DiscountsField .item .couponCode {
+    flex-grow: 0;
+    margin-right: 8px;
+    padding: 5px 8px;
+    background-color: white;
+    border: 1px solid rgba(96, 125, 159, 0.25);
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.DiscountsField .item .couponCode.enabled {
+    background-color: #27ab83;
+    border-color: #27ab83;
+    color: #fff !important;
+}
+
+.DiscountsField .item .name {
+    flex-grow: 1;
+    padding: 2px 5px;
+}
+
+.DiscountsField .selectize-dropdown-content {
+    padding: 5px 8px;
+}

@@ -1,17 +1,27 @@
 {% do view.registerAssetBundle('BeSteadfast\\DiscountRelations\\web\\assets\\DiscountsField') -%}
 
-{% import "_includes/forms" as forms %}
-
-{%- set class = [
-	'nicetext',
-	'DiscountsField'
-]|filter %}
-
 {% set config = {
+	type: 'text',
 	id: name,
 	name: name,
-	value: value,
-	class: class,
+	value: value ?? null,
+	class: 'DiscountsField',
 } %}
 
-{{ forms.text(config) }}
+{{- tag('input', config) -}}
+
+{% set jsSettings = {
+	name: name | namespaceInputName,
+	currentOptions: currentOptions ?? [],
+} %}
+
+<script>
+// {% js %}
+
+	DiscountRelations.DiscountsField.initField(
+		document.getElementById("{{ name | namespaceInputId }}"),
+		{{ jsSettings|json_encode|raw }}
+	);
+
+// {% endjs %}
+</script>

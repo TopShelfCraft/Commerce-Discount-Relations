@@ -5,12 +5,10 @@ use Craft;
 use craft\base\Plugin;
 use craft\console\Application as ConsoleApplication;
 use craft\events\RegisterComponentTypesEvent;
-use craft\helpers\FileHelper;
 use craft\services\Fields;
 use craft\web\Application as WebApplication;
 use craft\web\twig\variables\CraftVariable;
 use BeSteadfast\DiscountRelations\relations\Relations;
-use BeSteadfast\DiscountRelations\config\Settings;
 use BeSteadfast\DiscountRelations\relations\RelationsField;
 use yii\base\Event;
 
@@ -23,8 +21,6 @@ use yii\base\Event;
  * @see http://www.yiiframework.com/doc-2.0/guide-structure-modules.html
  *
  * @property Relations $relations
- *
- * @method Settings getSettings()
  */
 class DiscountRelations extends Plugin
 {
@@ -96,21 +92,6 @@ class DiscountRelations extends Plugin
 	public static function t($message, $params = [], $language = null)
 	{
 		return Craft::t(self::getInstance()->getHandle(), $message, $params, $language);
-	}
-
-	/*
-     * Protected methods
-     * ===========================================================================
-     */
-
-	/**
-	 * Creates and returns the model used to store the plugin’s settings.
-	 *
-	 * @return Settings|null
-	 */
-	protected function createSettingsModel()
-	{
-		return new Settings();
 	}
 
 	/*

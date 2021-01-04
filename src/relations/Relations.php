@@ -4,31 +4,20 @@ namespace BeSteadfast\DiscountRelations\relations;
 use Craft;
 use craft\base\Component;
 use craft\base\ElementInterface;
-use craft\commerce\records\Discount;
-use craft\fields\BaseRelationField;
 use craft\helpers\Db;
-use BeSteadfast\DiscountRelations\discounts\DiscountQuery;
 
 class Relations extends Component
 {
 
 	/**
-	 * @return DiscountQuery
-	 *
-	 * @throws \yii\base\InvalidConfigException
-	 */
-	public function findDiscounts()
-	{
-		return Craft::createObject(DiscountQuery::class, [Discount::class]);
-	}
-
-	/**
 	 * Saves some relations for a field.
 	 *
-	 * @param BaseRelationField $field
-	 * @param ElementInterface $source
+	 * @param RelationsField $field
+	 * @param ElementInterface $element
 	 * @param array $targetIds
+	 *
 	 * @throws \Throwable
+	 * @throws \yii\db\Exception
 	 */
 	public function saveRelations(RelationsField $field, ElementInterface $element, array $targetIds)
 	{
