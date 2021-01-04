@@ -209,6 +209,11 @@ class RelationsField extends Field
 			return $discountQuery->andWhere(['in', 'code', $codes]);
 		}
 
+		if (is_array($value))
+		{
+			// TODO: Allow an array in addition to comma-separated list, to be more like Element Relation fields.
+		}
+
 		// Getting the value from an element.
 
 		$relations = RelationRecord::find()
