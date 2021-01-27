@@ -1,5 +1,5 @@
 <?php
-namespace BeSteadfast\DiscountRelations\base;
+namespace beSteadfast\DiscountRelations\base;
 
 use craft\db\ActiveRecord;
 use craft\helpers\DateTimeHelper;

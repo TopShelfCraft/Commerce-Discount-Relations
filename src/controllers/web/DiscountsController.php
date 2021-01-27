@@ -1,7 +1,7 @@
 <?php
-namespace BeSteadfast\DiscountRelations\controllers\web;
+namespace beSteadfast\DiscountRelations\controllers\web;
 
-use BeSteadfast\DiscountRelations\discounts\DiscountQuery;
+use beSteadfast\DiscountRelations\discounts\DiscountQuery;
 use craft\commerce\models\Discount;
 use craft\helpers\Db;
 use craft\helpers\StringHelper;

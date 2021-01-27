@@ -1,8 +1,8 @@
 <?php
-namespace BeSteadfast\DiscountRelations\relations;
+namespace beSteadfast\DiscountRelations\relations;
 
+use beSteadfast\DiscountRelations\base\BaseRecord;
 use Craft;
-use BeSteadfast\DiscountRelations\base\BaseRecord;
 
 /**
  * A record of the relationship between an Element and a Discount, via a Field

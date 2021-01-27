@@ -1,11 +1,11 @@
 <?php
-namespace BeSteadfast\DiscountRelations\migrations;
+namespace beSteadfast\DiscountRelations\migrations;
 
+use beSteadfast\DiscountRelations\relations\RelationRecord;
 use craft\commerce\records\Discount;
 use craft\db\Migration;
 use craft\records\Element;
 use craft\records\Field;
-use BeSteadfast\DiscountRelations\relations\RelationRecord;
 
 class Install extends Migration
 {

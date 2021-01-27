@@ -1,12 +1,12 @@
 <?php
-namespace BeSteadfast\DiscountRelations\relations;
+namespace beSteadfast\DiscountRelations\relations;
 
+use beSteadfast\DiscountRelations\DiscountRelations;
+use beSteadfast\DiscountRelations\discounts\DiscountQuery;
 use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\commerce\models\Discount;
-use BeSteadfast\DiscountRelations\DiscountRelations;
-use BeSteadfast\DiscountRelations\discounts\DiscountQuery;
 
 class RelationsField extends Field
 {

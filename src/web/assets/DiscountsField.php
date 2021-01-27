@@ -1,5 +1,5 @@
 <?php
-namespace BeSteadfast\DiscountRelations\web\assets;
+namespace beSteadfast\DiscountRelations\web\assets;
 
 use craft\web\AssetBundle;
 use craft\web\assets\selectize\SelectizeAsset;

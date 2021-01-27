@@ -1,5 +1,5 @@
 <?php
-namespace BeSteadfast\DiscountRelations\relations;
+namespace beSteadfast\DiscountRelations\relations;
 
 use Craft;
 use craft\base\Component;

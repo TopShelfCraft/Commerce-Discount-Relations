@@ -1,6 +1,8 @@
 <?php
-namespace BeSteadfast\DiscountRelations;
+namespace beSteadfast\DiscountRelations;
 
+use beSteadfast\DiscountRelations\relations\Relations;
+use beSteadfast\DiscountRelations\relations\RelationsField;
 use Craft;
 use craft\base\Plugin;
 use craft\console\Application as ConsoleApplication;
@@ -8,8 +10,6 @@ use craft\events\RegisterComponentTypesEvent;
 use craft\services\Fields;
 use craft\web\Application as WebApplication;
 use craft\web\twig\variables\CraftVariable;
-use BeSteadfast\DiscountRelations\relations\Relations;
-use BeSteadfast\DiscountRelations\relations\RelationsField;
 use yii\base\Event;
 
 /**
@@ -63,7 +63,7 @@ class DiscountRelations extends Plugin
 	public function init()
 	{
 
-		Craft::setAlias('@BeSteadfast/DiscountRelations', __DIR__);
+		Craft::setAlias('@beSteadfast/DiscountRelations', __DIR__);
 		parent::init();
 
 		$this->_registerEventHandlers();
@@ -73,11 +73,11 @@ class DiscountRelations extends Plugin
 
 		if (Craft::$app instanceof ConsoleApplication)
 		{
-			$this->controllerNamespace = 'BeSteadfast\\DiscountRelations\\controllers\\console';
+			$this->controllerNamespace = 'beSteadfast\\DiscountRelations\\controllers\\console';
 		}
 		if (Craft::$app instanceof WebApplication)
 		{
-			$this->controllerNamespace = 'BeSteadfast\\DiscountRelations\\controllers\\web';
+			$this->controllerNamespace = 'beSteadfast\\DiscountRelations\\controllers\\web';
 		}
 
 	}

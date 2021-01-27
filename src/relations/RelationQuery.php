@@ -1,5 +1,5 @@
 <?php
-namespace BeSteadfast\DiscountRelations\relations;
+namespace beSteadfast\DiscountRelations\relations;
 
 use yii\db\ActiveQuery;
 
