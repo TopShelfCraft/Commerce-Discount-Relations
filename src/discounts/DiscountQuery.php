@@ -10,72 +10,36 @@ use yii\db\ActiveQuery;
 class DiscountQuery extends ActiveQuery
 {
 
-	/**
-	 * @return DiscountQuery
-	 */
-	public static function new()
+	public static function new(): DiscountQuery
 	{
-		return $query = Craft::createObject(static::class, [DiscountRecord::class]);
+		return Craft::createObject(static::class, [DiscountRecord::class]);
 	}
 
-	/**
-	 * @inheritdoc
-	 */
 	public function init()
 	{
 
 		parent::init();
 
-		$this->select([
-			'[[discounts.id]]',
-			'[[discounts.name]]',
-			'[[discounts.description]]',
-			'[[discounts.code]]',
-			'[[discounts.perUserLimit]]',
-			'[[discounts.perEmailLimit]]',
-			'[[discounts.totalDiscountUseLimit]]',
-			'[[discounts.totalDiscountUses]]',
-			'[[discounts.dateFrom]]',
-			'[[discounts.dateTo]]',
-			'[[discounts.purchaseTotal]]',
-			'[[discounts.orderConditionFormula]]',
-			'[[discounts.purchaseQty]]',
-			'[[discounts.maxPurchaseQty]]',
-			'[[discounts.baseDiscount]]',
-			'[[discounts.baseDiscountType]]',
-			'[[discounts.perItemDiscount]]',
-			'[[discounts.percentDiscount]]',
-			'[[discounts.percentageOffSubject]]',
-			'[[discounts.excludeOnSale]]',
-			'[[discounts.hasFreeShippingForMatchingItems]]',
-			'[[discounts.hasFreeShippingForOrder]]',
-			'[[discounts.allGroups]]',
-			'[[discounts.allPurchasables]]',
-			'[[discounts.allCategories]]',
-			'[[discounts.categoryRelationshipType]]',
-			'[[discounts.enabled]]',
-			'[[discounts.stopProcessing]]',
-			'[[discounts.ignoreSales]]',
-			'[[discounts.sortOrder]]',
-			'[[discounts.dateCreated]]',
-			'[[discounts.dateUpdated]]',
-		])
-		->from(['discounts' => Table::DISCOUNTS])
-		->orderBy(['sortOrder' => SORT_ASC]);
+		// @see Discounts::_createDiscountQuery()
 
-		$commerce = Craft::$app->getPlugins()->getStoredPluginInfo('commerce');
-		if ($commerce && version_compare($commerce['version'], '3.1', '>=')) {
-			$this->addSelect('[[discounts.appliedTo]]');
-		}
+		$this->select('discounts.*')
+			->from(['discounts' => Table::DISCOUNTS])
+			->orderBy(['sortOrder' => SORT_ASC]);
+
+		$this->addSelect([
+			'dp.purchasableId',
+			'dpt.categoryId',
+			'dug.userGroupId',
+		])->leftJoin(Table::DISCOUNT_PURCHASABLES . ' dp', '[[dp.discountId]]=[[discounts.id]]')
+			->leftJoin(Table::DISCOUNT_CATEGORIES . ' dpt', '[[dpt.discountId]]=[[discounts.id]]')
+			->leftJoin(Table::DISCOUNT_USERGROUPS . ' dug', '[[dug.discountId]]=[[discounts.id]]');
 
 	}
 
 	/**
-	 * @param $param
-	 *
 	 * @return static
 	 */
-	public function search($param)
+	public function search(string $param)
 	{
 		$param = strtolower($param);
 
@@ -89,15 +53,15 @@ class DiscountQuery extends ActiveQuery
 	/**
 	 * @return int[]
 	 */
-	public function ids()
+	public function ids(): array
 	{
-		return $this->select('id')->column();
+		return $this->select('discounts.id')->column();
 	}
 
 	/**
 	 * @return string[]
 	 */
-	public function codes()
+	public function codes(): array
 	{
 		return $this->select('code')->column();
 	}
@@ -105,25 +69,55 @@ class DiscountQuery extends ActiveQuery
 	/**
 	 * Transform the raw query data into an array of proper models.
 	 *
-	 * @param array $rows
+	 * @param array $rows The raw query data
 	 *
-	 * @return Discount[]
+	 * @return Discount[] A list of Discount models, with purchasableIds, categoryIds, and userGroupIds loaded
+	 *
+	 * @see Discounts::_populateDiscounts()
 	 */
-	public function populate($rows)
+	public function populate($rows): array
 	{
 
-		if (empty($rows))
-		{
+		if (empty($rows)) {
 			return [];
 		}
 
-		return array_map(
-			function($row)
-			{
-				return new Discount($row);
-			},
-			$rows
-		);
+		$discounts = [];
+		$purchasables = [];
+		$categories = [];
+		$userGroups = [];
+
+		foreach ($rows as $discount) {
+			$id = $discount['id'];
+			if ($discount['purchasableId']) {
+				$purchasables[$id][] = $discount['purchasableId'];
+			}
+
+			if ($discount['categoryId']) {
+				$categories[$id][] = $discount['categoryId'];
+			}
+
+			if ($discount['userGroupId']) {
+				$userGroups[$id][] = $discount['userGroupId'];
+			}
+
+			unset($discount['purchasableId'], $discount['userGroupId'], $discount['categoryId']);
+
+			if (!isset($discounts[$id])) {
+				unset($discount['uid']);
+				$discounts[$id] = new Discount($discount);
+			}
+		}
+
+		foreach ($discounts as $id => $discount) {
+			$discount->setPurchasableIds($purchasables[$id] ?? []);
+			$discount->setCategoryIds($categories[$id] ?? []);
+			$discount->setUserGroupIds($userGroups[$id] ?? []);
+		}
+
+		// Return a list array (rather than associative).
+		// (Results might get encoded into JSON later, and we need it to be a plain array in JS rather than a keyed object.)
+		return array_values($discounts);
 
 	}
 

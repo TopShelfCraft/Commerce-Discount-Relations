@@ -222,7 +222,7 @@ class RelationsField extends Field
 
 		$discountQuery->andWhere([
 			'in',
-			'id',
+			'discounts.id',
 			$relations->discountIds()
 		]);
 

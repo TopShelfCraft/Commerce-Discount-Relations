@@ -2,7 +2,7 @@
 	"name": "besteadfast/commerce-discount-relations",
 	"description": "A fieldtype for creating element relations to Discounts in Craft Commerce",
 	"type": "craft-plugin",
-	"version": "0.0.5",
+	"version": "0.1.0",
 	"license": "proprietary",
 	"support": {
 		"issues": "https://github.com/beSteadfast/Commerce-Discount-Relations/issues",
@@ -19,7 +19,7 @@
 		}
 	],
 	"require": {
-		"craftcms/commerce": "^3.2"
+		"craftcms/commerce": "^3.4"
 	},
 	"autoload": {
 		"psr-4": {
