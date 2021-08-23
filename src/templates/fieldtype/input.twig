@@ -15,13 +15,11 @@
 	currentOptions: currentOptions ?? [],
 } %}
 
-<script>
-// {% js %}
+{% js %}
 
 	DiscountRelations.DiscountsField.initField(
 		document.getElementById("{{ name | namespaceInputId }}"),
 		{{ jsSettings|json_encode|raw }}
 	);
 
-// {% endjs %}
-</script>
+{% endjs %}
