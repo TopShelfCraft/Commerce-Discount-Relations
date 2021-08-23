@@ -7,6 +7,7 @@ use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\commerce\models\Discount;
+use craft\elements\db\ElementQueryInterface;
 
 class RelationsField extends Field
 {
@@ -182,6 +183,20 @@ class RelationsField extends Field
 	/**
 	 * @inheritdoc
 	 */
+	public function modifyElementsQuery(ElementQueryInterface $query, $value)
+	{
+		if (!$value)
+		{
+			return;
+		}
+		$relationQuery = RelationRecord::find()->andWhere(['fieldId' => $this->id])->discount($value);
+		$elementIds = $relationQuery->elementIds();
+		$query->subQuery->andWhere(['in', 'elements.id', $elementIds]);
+	}
+
+	/**
+	 * @inheritdoc
+	 */
 	public function normalizeValue($value, ElementInterface $element = null)
 	{
 
@@ -211,7 +226,8 @@ class RelationsField extends Field
 
 		if (is_array($value))
 		{
-			// TODO: Allow an array in addition to comma-separated list, to be more like Element Relation fields.
+			$codes = array_map('trim', $value);
+			return $discountQuery->andWhere(['in', 'code', $codes]);
 		}
 
 		// Getting the value from an element.
