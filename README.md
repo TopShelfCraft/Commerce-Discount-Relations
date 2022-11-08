@@ -1,4 +1,4 @@
-# Commerce Discount Relations
+# Discount Relations
 
 _a plugin for Craft CMS 3.5+ and Commerce 3.2+_
 

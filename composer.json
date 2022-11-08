@@ -28,7 +28,7 @@
 	},
 	"extra": {
 		"name": "Discount Relations",
-		"handle": "commerce-discount-relations",
+		"handle": "discount-relations",
 		"class": "TopShelfCraft\\DiscountRelations\\DiscountRelations"
 	}
 }

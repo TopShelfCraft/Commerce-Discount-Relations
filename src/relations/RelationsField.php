@@ -155,7 +155,7 @@ class RelationsField extends Field
 			);
 		}
 
-		return Craft::$app->getView()->renderTemplate('commerce-discount-relations/fieldtype/input', [
+		return Craft::$app->getView()->renderTemplate('discount-relations/fieldtype/input', [
 			'name' => $this->handle,
 			'value' => $value,
 			'field' => $this,
