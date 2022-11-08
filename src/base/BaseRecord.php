@@ -1,5 +1,5 @@
 <?php
-namespace beSteadfast\DiscountRelations\base;
+namespace TopShelfCraft\DiscountRelations\base;
 
 use craft\db\ActiveRecord;
 use craft\helpers\DateTimeHelper;

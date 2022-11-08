@@ -1,7 +1,7 @@
 <?php
-namespace beSteadfast\DiscountRelations\migrations;
+namespace TopShelfCraft\DiscountRelations\migrations;
 
-use beSteadfast\DiscountRelations\relations\RelationRecord;
+use TopShelfCraft\DiscountRelations\relations\RelationRecord;
 use craft\commerce\records\Discount;
 use craft\db\Migration;
 use craft\records\Element;

@@ -1,8 +1,8 @@
 <?php
-namespace beSteadfast\DiscountRelations;
+namespace TopShelfCraft\DiscountRelations;
 
-use beSteadfast\DiscountRelations\relations\Relations;
-use beSteadfast\DiscountRelations\relations\RelationsField;
+use TopShelfCraft\DiscountRelations\relations\Relations;
+use TopShelfCraft\DiscountRelations\relations\RelationsField;
 use Craft;
 use craft\base\Plugin;
 use craft\console\Application as ConsoleApplication;
@@ -63,7 +63,7 @@ class DiscountRelations extends Plugin
 	public function init()
 	{
 
-		Craft::setAlias('@beSteadfast/DiscountRelations', __DIR__);
+		Craft::setAlias('@TopShelfCraft/DiscountRelations', __DIR__);
 		parent::init();
 
 		$this->_registerEventHandlers();
@@ -73,11 +73,11 @@ class DiscountRelations extends Plugin
 
 		if (Craft::$app instanceof ConsoleApplication)
 		{
-			$this->controllerNamespace = 'beSteadfast\\DiscountRelations\\controllers\\console';
+			$this->controllerNamespace = 'TopShelfCraft\\DiscountRelations\\controllers\\console';
 		}
 		if (Craft::$app instanceof WebApplication)
 		{
-			$this->controllerNamespace = 'beSteadfast\\DiscountRelations\\controllers\\web';
+			$this->controllerNamespace = 'TopShelfCraft\\DiscountRelations\\controllers\\web';
 		}
 
 	}

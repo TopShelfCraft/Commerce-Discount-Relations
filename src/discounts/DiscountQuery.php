@@ -1,5 +1,5 @@
 <?php
-namespace beSteadfast\DiscountRelations\discounts;
+namespace TopShelfCraft\DiscountRelations\discounts;
 
 use Craft;
 use craft\commerce\db\Table;

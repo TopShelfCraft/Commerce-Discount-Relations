@@ -1,7 +1,7 @@
 <?php
-namespace beSteadfast\DiscountRelations\relations;
+namespace TopShelfCraft\DiscountRelations\relations;
 
-use beSteadfast\DiscountRelations\base\BaseRecord;
+use TopShelfCraft\DiscountRelations\base\BaseRecord;
 use Craft;
 
 /**

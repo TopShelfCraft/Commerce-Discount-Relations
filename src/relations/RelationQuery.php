@@ -1,7 +1,7 @@
 <?php
-namespace beSteadfast\DiscountRelations\relations;
+namespace TopShelfCraft\DiscountRelations\relations;
 
-use beSteadfast\DiscountRelations\discounts\DiscountQuery;
+use TopShelfCraft\DiscountRelations\discounts\DiscountQuery;
 use craft\commerce\models\Discount;
 use craft\helpers\ArrayHelper;
 use yii\db\ActiveQuery;

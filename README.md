@@ -2,7 +2,8 @@
 
 _a plugin for Craft CMS 3.5+ and Commerce 3.2+_
 
-**from [Steadfast Design](https://steadfast.design)**
+**A [Top Shelf Craft](https://topshelfcraft.com) creation**  
+[Michael Rog](https://michaelrog.com), Proprietor
 
 
 * * *
@@ -11,3 +12,4 @@ _a plugin for Craft CMS 3.5+ and Commerce 3.2+_
 #### Contributors:
 
 - Plugin development: [Michael Rog](https://michaelrog.com) / @michaelrog
+- Created in collaboration with [Steadfast Design](https://steadfast.design)

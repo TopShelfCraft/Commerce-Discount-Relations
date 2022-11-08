@@ -1,8 +1,8 @@
 <?php
-namespace beSteadfast\DiscountRelations\relations;
+namespace TopShelfCraft\DiscountRelations\relations;
 
-use beSteadfast\DiscountRelations\DiscountRelations;
-use beSteadfast\DiscountRelations\discounts\DiscountQuery;
+use TopShelfCraft\DiscountRelations\DiscountRelations;
+use TopShelfCraft\DiscountRelations\discounts\DiscountQuery;
 use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
