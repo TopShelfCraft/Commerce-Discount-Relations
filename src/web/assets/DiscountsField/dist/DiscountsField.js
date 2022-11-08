@@ -35,7 +35,7 @@ DiscountRelations.DiscountsField = {
 			load: function(query, callback) {
 				if (query.length < 2) return callback();
 				Craft.postActionRequest(
-					'discount-relations/discounts/search-discount-options',
+					'commerce-discount-relations/discounts/search-discount-options',
 					{
 						search: query,
 					},

@@ -2,7 +2,7 @@
 	"name": "topshelfcraft/commerce-discount-relations",
 	"description": "A fieldtype for creating element relations to Discounts in Craft Commerce",
 	"type": "craft-plugin",
-	"version": "0.3.0",
+	"version": "3.0.0-beta.1",
 	"license": "proprietary",
 	"support": {
 		"issues": "https://github.com/TopShelfCraft/Commerce-Discount-Relations/issues",
@@ -28,7 +28,7 @@
 	},
 	"extra": {
 		"name": "Discount Relations",
-		"handle": "discount-relations",
+		"handle": "commerce-discount-relations",
 		"class": "TopShelfCraft\\DiscountRelations\\DiscountRelations"
 	}
 }

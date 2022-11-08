@@ -16,7 +16,7 @@ use yii\base\Event;
  * Module to encapsulate Discount Relations functionality.
  *
  * This class will be available throughout the system via:
- * `Craft::$app->getModule('discount-relations')`
+ * `Craft::$app->getModule('commerce-discount-relations')`
  *
  * @see http://www.yiiframework.com/doc-2.0/guide-structure-modules.html
  *
